@@ -1,0 +1,10 @@
+FROM node:8-alpine
+WORKDIR /
+RUN apk add git --no-cache && \
+    npm init -y && \
+    npm install semantic-release@15.1.3 && \
+    rm -rf /usr/share/man/tmp/* \
+    /root/.npm /root/.node-gyp \
+    /usr/lib/node_modules
+
+ENTRYPOINT ["/node_modules/.bin/semantic-release"]
