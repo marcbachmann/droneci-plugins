@@ -1,0 +1,22 @@
+{
+  "name": "@marcbachmann/drone-plugin-eslint",
+  "version": "1.0.0",
+  "main": "cli.js",
+  "scripts": {
+    "test": "./cli.js"
+  },
+  "keywords": [],
+  "author": "Marc Bachmann <marc.brookman@gmail.com>",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "@octokit/rest": "^15.2.6",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-formatter-pretty": "^1.3.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}
