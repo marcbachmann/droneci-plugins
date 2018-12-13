@@ -1,3 +1,4 @@
+# docker build -t marcbachman/eslint:5.10.0 .
 FROM node:8-alpine
 WORKDIR /
 
