@@ -24,11 +24,11 @@ docker push marcbachmann/eslint:4.19.1
 pipeline:
   release:
     group: build
-    image: marcbachmann/semantic-release:15.1.3
+    image: marcbachmann/semantic-release:15.1.4
     secrets: [gh_token, npm_token]
 ```
 
 ```bash
-docker build -f ./Dockerfile.semantic-release -t marcbachmann/semantic-release:15.1.3 .
-docker push marcbachmann/semantic-release:15.1.3
+docker build -f ./Dockerfile.semantic-release -t marcbachmann/semantic-release:15.1.4 .
+docker push marcbachmann/semantic-release:15.1.4
 ```
