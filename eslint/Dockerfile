@@ -1,8 +1,8 @@
 # docker build -t marcbachman/eslint:5.10.0 .
 FROM node:10-alpine
-WORKDIR /
+ADD . /eslint-drone-plugin
+WORKDIR /eslint-drone-plugin
 
-ADD . /
 RUN npm install
 USER node
-CMD ["/cli.js"]
+ENTRYPOINT ["/eslint-drone-plugin/cli.js"]
