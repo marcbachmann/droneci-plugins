@@ -1,6 +1,5 @@
 # DroneCI Plugins
 
-
 ## eslint
 ```yaml
 pipeline:
@@ -29,6 +28,6 @@ pipeline:
 ```
 
 ```bash
-docker build -f ./Dockerfile.semantic-release -t marcbachmann/semantic-release:15.1.4 .
+docker build -f ./semantic-release/Dockerfile -t marcbachmann/semantic-release:15.1.4 .
 docker push marcbachmann/semantic-release:15.1.4
 ```
