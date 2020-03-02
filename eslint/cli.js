@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const eslint = require('eslint')
-const cli = new eslint.CLIEngine()
+const cli = new eslint.CLIEngine({extensions: ['.js', '.vue']})
 const argv = process.argv.slice(2)
 const files = argv.length ? argv : ['./']
 
