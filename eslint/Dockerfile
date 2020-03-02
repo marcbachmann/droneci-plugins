@@ -3,6 +3,6 @@ FROM node:10-alpine
 ADD . /eslint-drone-plugin
 WORKDIR /eslint-drone-plugin
 
-RUN npm install
+RUN npm install && npm cache clean -f
 USER node
 ENTRYPOINT ["/eslint-drone-plugin/cli.js"]
