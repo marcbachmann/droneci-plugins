@@ -1,10 +1,19 @@
 #!/usr/bin/env node
 const eslint = require('eslint')
-const cli = new eslint.CLIEngine({extensions: ['.js', '.vue']})
+let defaultExts = '.js'
+try {
+  const config = require('fs').readFileSync('./.eslintrc.json', 'utf8')
+  if (config.includes('vue-eslint-parser')) defaultExts = '.js,.vue'
+  // eslint-disable-next-line
+} catch (err) {}
+
+// eslint-disable-next-line max-len
+const extensions = [...new Set((process.env.DRONE_PLUGIN_EXTENSIONS || defaultExts).split(/[ ,]/).filter(Boolean))]
+const cli = new eslint.CLIEngine({extensions, cwd: process.cwd()})
 const argv = process.argv.slice(2)
 const files = argv.length ? argv : ['./']
 
-const {errorCount, warningCount, results} = cli.executeOnFiles(cli.resolveFileGlobPatterns(files))
+const {errorCount, warningCount, results} = cli.executeOnFiles(files)
 const message = []
 
 if (errorCount) {
