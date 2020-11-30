@@ -9,7 +9,7 @@
   "author": "Marc Bachmann <marc.brookman@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "semantic-release": "^15.1.4",
+    "semantic-release": "^17.2.3",
     "semantic-release-verify-patch": "^2.3.1"
   }
 }
